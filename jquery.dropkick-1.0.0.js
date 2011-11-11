@@ -71,11 +71,11 @@
         // The current <select> element
         $select = $(this),
 
-        // Store a reference to the originally selected <option> element
-        $original = $select.find(':selected').first(),
-
         // Save all of the <option> elements
         $options = $select.find('option'),
+
+        // Store a reference to the originally selected <option> element
+        $original = $options.filter(':selected').first(),
 
         // We store lots of great stuff using jQuery data
         data = $select.data('dropkick') || {},
