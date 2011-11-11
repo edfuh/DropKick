@@ -8,7 +8,7 @@
  *                        <http://twitter.com/JamieLottering>
  *
  */
-(function ($, window, document) {
+(function ($, win, doc) {
 
   var ie6 = false;
 
@@ -16,7 +16,7 @@
   if ($.browser.msie && $.browser.version.substr(0, 1) < 7) {
     ie6 = true;
   } else {
-    document.documentElement.className = document.documentElement.className + ' dk_fouc';
+    doc.documentElement.className = doc.documentElement.className + ' dk_fouc';
   }
 
   var
@@ -348,7 +348,7 @@
 
       _openDropdown($dk);
 
-      if ("ontouchstart" in window) {
+      if ("ontouchstart" in win) {
         $dk.addClass('dk_touch');
         $dk.find('.dk_options_inner').addClass('scrollable vertical');
       }
@@ -372,7 +372,7 @@
     });
 
     // Setup keyboard nav
-    $(document).bind('keydown.dk_nav', function (e) {
+    $(doc).bind('keydown.dk_nav', function (e) {
       var
         // Look for an open dropdown...
         $open    = $('.dk_container.dk_open'),
@@ -397,4 +397,4 @@
       }
     });
   });
-})(jQuery, window, document);
+})(jQuery, this, document);
