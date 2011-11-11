@@ -6,7 +6,7 @@
  *
  * &copy; 2011 Jamie Lottering <http://github.com/JamieLottering>
  *                        <http://twitter.com/JamieLottering>
- * 
+ *
  */
 (function ($, window, document) {
 
@@ -18,7 +18,7 @@
   } else {
     document.documentElement.className = document.documentElement.className + ' dk_fouc';
   }
-  
+
   var
     // Public methods exposed to $.fn.dropkick()
     methods = {},
@@ -353,7 +353,6 @@
         $dk.find('.dk_options_inner').addClass('scrollable vertical');
       }
 
-      e.preventDefault();
       return false;
     });
 
@@ -364,12 +363,11 @@
         $dk     = $option.parents('.dk_container').first(),
         data    = $dk.data('dropkick')
       ;
-    
+
       _closeDropdown($dk);
       _updateFields($option, $dk);
       _setCurrent($option.parent(), $dk);
-    
-      e.preventDefault();
+
       return false;
     });
 
